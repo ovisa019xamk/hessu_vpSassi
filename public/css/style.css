@@ -1,0 +1,99 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+/*OMAA TYYLIÄ*/
+
+/*headeri*/
+
+#headeri{
+	margin: auto;
+}
+#infoIkoni img{
+	width: 60px;
+	height: 60px;
+}
+#logo{
+	text-align: center;
+}
+#logo img{
+	width: 150px;
+	height: 150px;
+}
+#kieliValikko{
+	width: 80px;
+	float: right;
+}
+
+/*content viikonpäivälista*/
+
+#ma,#ti,#ke,#to,#pe{
+	padding: 2px 10px 15px 2px;
+	margin-top: 10px;
+}
+.paivays{
+	color: white;
+	font-size: 20px;
+	text-align: right;
+}
+.hinta{
+	font-size: 200%;
+	font-weight: bold;
+	color: white;
+	text-align: right;
+}
+.vkpNimi{
+	font-size: 20px;
+}
+#viikonpaivaLista{
+	max-width: 100%;
+}
+
+/*content tilaustiedot*/
+
+#tilausTiedot{
+	margin-top: 20px;
+	max-width: 100%;
+}
+#sisalto{
+	margin: auto;
+	max-width: 800px;
+}
+#hintaYht{
+	text-align: center;
+}
+
+/*inputtikenttien muokkaus*/
+
+/* label color */
+   .input-field label {
+     color: grey;
+	 font-size: 30px;
+	 margin-top: -22px;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid black;
+     box-shadow: 0 1px 0 0 #000;
+   }
+#kokoNimi, #puhelin, #osoite{
+	margin-top: 30px;
+}
+
+/*tilauspainikkeen tyylit*/
+
+#tilausPainike{
+	width: 200px;
+	height: 60px;
+}

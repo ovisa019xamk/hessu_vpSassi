@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Hessun Ateriapalvelu</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+<!--SIsäänkirjautumis-palkki työntekijöille ???-->
+  <nav class="light-blue lighten-1" role="navigation">
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Kirjaudu</a></li>
+      </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Kirjaudu</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!--SISÄLTÖ-->
+  <div class="container-fluid" id="sisalto">
+    <br><br>
+	<div class="row" id="headeri">
+	
+		<!--kysymysmerkki ikoni-->
+		<div class="col s3" id="infoIkoni">
+			<img src="kuvat/kysymysmerkkinappi.png">
+		</div>
+		
+		<!--Logo-->
+		<div class="col s6" id="logo">
+			<img src="kuvat/hessu_logo.jpg">
+		</div>
+		
+		<!--Kielivalikko-->
+		<div class="col s3" id="kieliValikko">
+			<select class="browser-default">
+				<option value="1 selected">FI</option>
+				<option value="2">SE</option>
+			</select>
+		</div>
+		
+	</div>
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6" id="viikonpaivaLista">
+		
+			<!--MA-->
+			<div class="col s12 pink lighten-1" id="ma">
+				<div class="col s8 vkpNimi">maanantai</div>
+				<div class="col s4 paivays">26.3.2018</div>
+				<br><br>
+				<div class="col s8">
+				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+				</div>
+				<div class="col s4 hinta">00 €</div>
+				<br><br>
+			</div>
+			
+			<!--TI-->
+			<div class="col s12 pink lighten-1" id="ti">
+				<div class="col s8 vkpNimi">tiistai</div>
+				<div class="col s4 paivays">27.3.2018</div>
+				<br><br>
+				<div class="col s8">
+				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+				</div>
+				<div class="col s4 hinta">00 €</div>
+				<br><br>
+			</div>
+			
+			<!--KE-->
+			<div class="col s12 pink lighten-1" id="ke">
+				<div class="col s8 vkpNimi">keskiviikko</div>
+				<div class="col s4 paivays">28.3.2018</div>
+				<br><br>
+				<div class="col s8">
+				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+				</div>
+				<div class="col s4 hinta">00 €</div>
+				<br><br>
+			</div>
+			
+			<!--TO-->
+			<div class="col s12 pink lighten-1" id="to">
+				<div class="col s8 vkpNimi">torstai</div>
+				<div class="col s4 paivays">29.3.2018</div>
+				<br><br>
+				<div class="col s8">
+				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+				</div>
+				<div class="col s4 hinta">00 €</div>
+				<br><br>
+			</div>
+			
+			<!--PE-->
+			<div class="col s12 pink lighten-1" id="pe">
+				<div class="col s8 vkpNimi">perjantai</div>
+				<div class="col s4 paivays">30.3.2018</div>
+				<br><br>
+				<div class="col s8">
+				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+				</div>
+				<div class="col s4 hinta">00 €</div>
+				<br><br>
+			</div>	
+		</div>
+		
+		<div class="col s12 m6" id="tilausTiedot">
+		
+			<div class="col s12" id="hintaYht">
+			<h4>Hinta yhteensä: 00 €</h4><br>
+			</div>
+			<!--Koko nimi-->
+			<div class="input-field col s12" id="kokoNimi">
+				<input placeholder="Kirjoita tähän etunimesi ja sukunimesi" id="nimi" type="text" class="validate">
+				<label class="active blue-text" for="nimi">Koko nimi</label>
+			</div>
+			<!--Puhelin-->
+			<div class="input-field col s12" id="puhelin">
+				<input placeholder="Kirjoita tähän puhelinnumerosi" id="nimi" type="text" class="validate">
+				<label class="active blue-text" for="nimi">Puhelinnumero</label>
+			</div>
+			<!--Osoite-->
+			<div class="input-field col s12" id="osoite">
+				<input placeholder="Kirjoita tähän kotiosoitteesi" id="nimi" type="text" class="validate">
+				<label class="active blue-text" for="nimi">Osoitteesi</label>
+			</div>
+			<!--Tilauspainike-->
+			<button class="btn waves-effect lime" type="submit" name="action" id="tilausPainike">
+				Tilaa ateriat
+				<i class="material-icons right">send</i>
+			</button>
+		</div>
+		
+	</div>
+  
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+	<!--FOOTER-->
+    <div class="container">
+      
+    </div>
+	
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
