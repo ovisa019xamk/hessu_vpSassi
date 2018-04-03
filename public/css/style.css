@@ -24,6 +24,12 @@
 	width: 60px;
 	height: 60px;
 }
+#infoIkoni p{
+	margin-top: -8px;
+	margin-left: 7px;
+	font-weight: bold;
+	color: blue;
+}
 #logo{
 	text-align: center;
 }
@@ -35,6 +41,8 @@
 	width: 80px;
 	float: right;
 }
+
+/*ALOITUS SIVU*/
 
 /*content viikonpäivälista*/
 
@@ -96,4 +104,74 @@
 #tilausPainike{
 	width: 200px;
 	height: 60px;
+}
+
+/*ATERIAVALIKKO SIVU*/
+
+#ateriaPalkki{
+	width: 100%;
+}
+.collapsible-header{
+	height: 100px;
+	background-color: #ff6699;
+	font-size: 40px;
+	padding-top: 32px;
+	color: white;
+}
+.ateriaLista{
+	padding-top: 10px;
+	margin-left: -20px;
+}
+.ateria{
+	height: 450px;
+}
+.ateriaKuva img{
+	width: 100%;
+	padding-right: 10px;
+	padding-bottom: 30px;
+}
+.ateriaNimi{
+	font-size: 40px;
+}
+.ateriaTeksti{
+	font-size: 20px;
+	height: 130px;
+	overflow-y: auto;
+	border-bottom: 1px dotted grey;
+}
+.ateriaHinta{
+	text-align: right;
+	font-size: 40px;
+}
+.ateriaNappi{
+	float: right;
+	width: 170px;
+}
+
+/*Breakpointti, kun ruudun leveys alle 680px*/
+@Media only screen and (max-width: 680px){
+	.ateria{
+		height: 400px;
+	}
+}
+/*Breakpointti, kun ruudun leveys alle 600px*/
+@Media only screen and (max-width: 600px){
+	.ateriaKuva1{
+		display: none;
+	}
+	.ateria{
+		height: 370px;
+	}
+	.ateriaHinta, .ateriaNappi{
+		margin-top: -8px;
+	}
+}
+
+/*TESTAUS*/
+
+#ateriaValikko{
+	display: block;
+}
+#etuSivu{
+	display: none;
 }

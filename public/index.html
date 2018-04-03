@@ -12,16 +12,19 @@
 </head>
 <body>
 
-<!--SIsäänkirjautumis-palkki työntekijöille ???-->
+<!--Sisäänkirjautumis-palkki työntekijöille ???-->
   <nav class="light-blue lighten-1" role="navigation">
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Kirjaudu</a></li>
+		<li><button id="etusivuNappi">Etusivu</button></li>
+		<li><button id="ateriaNappi">Ateriavalikko</button></li>
       </ul>
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#">Kirjaudu</a></li>
+		<li><button id="etusivuNappi">Etusivu</button></li>
+		<li><button id="ateriaNappi">Ateriavalikko</button></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
   </nav>
 
   <!--SISÄLTÖ-->
@@ -32,6 +35,7 @@
 		<!--kysymysmerkki ikoni-->
 		<div class="col s3" id="infoIkoni">
 			<img src="kuvat/kysymysmerkkinappi.png">
+			<p>Ohjeet</p>
 		</div>
 		
 		<!--Logo-->
@@ -49,7 +53,7 @@
 		
 	</div>
 	<br><br>
-	<div class="row">
+	<div class="row" id="etuSivu">
 		<div class="col s12 m6" id="viikonpaivaLista">
 		
 			<!--MA-->
@@ -140,6 +144,66 @@
 			</button>
 		</div>
 		
+	</div>
+	
+	<div class="row" id="ateriaValikko">
+		<div class="col s12" id="valikko">
+			<ul class="collapsible" id="ateriaPalkki">
+				<li>
+				  <div class="collapsible-header">Kategoria 1</div>
+				  <div class="collapsible-body ateriaLista">
+						
+					<ul class="collection">
+							<!--YKSI ATERIA START-->
+							<li class="collection-item ateria">
+								<div class="col s12 ateriaKuva">
+									<img class="ateriaKuva1" src="kuvat/safka2.png">
+								</div>
+								<div class="col s12 m7">
+									<span class="ateriaNimi">Aterian Nimi</span>
+									<p class="ateriaTeksti">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+								<div class="col s12 m5 ateriaPohja">
+									<p class="ateriaHinta">00 €</p>
+									<a class="ateriaNappi waves-effect waves-light btn-large green">valitse ateria</a>
+								</div>
+							</li>
+							<!--YKSI ATERIA END-->
+							
+							<!--YKSI ATERIA START-->
+							<li class="collection-item ateria">
+								<div class="col s12 ateriaKuva">
+									<img class="ateriaKuva1" src="kuvat/safka2.png">
+								</div>
+								<div class="col s12 m7">
+									<span class="ateriaNimi">Aterian Nimi</span>
+									<p class="ateriaTeksti">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+								</div>
+								<div class="col s12 m5 ateriaPohja">
+									<p class="ateriaHinta">00 €</p>
+									<a class="ateriaNappi waves-effect waves-light btn-large green">valitse ateria</a>
+								</div>
+							</li>
+							<!--YKSI ATERIA END-->
+					</ul>
+					
+				  </div>
+				</li>
+				<li>
+				  <div class="collapsible-header">Kategoria 2</div>
+				  <div class="collapsible-body ateriaLista"><span>Lorem ipsum dolor sit amet.</span></div>
+				</li>
+				<li>
+				  <div class="collapsible-header">Kategoria 3</div>
+				  <div class="collapsible-body ateriaLista"><span>Lorem ipsum dolor sit amet.</span></div>
+				</li>
+			</ul>
+		</div>
 	</div>
   
     <br><br>
