@@ -9,6 +9,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
 </head>
 <body>
 
@@ -16,11 +19,13 @@
   <nav class="light-blue lighten-1" role="navigation">
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Kirjaudu</a></li>
+		<li><button id="kaikkiNappi" style="background-color:yellow">Näytä kaikki</button></li>
 		<li><button id="etusivuNappi">Etusivu</button></li>
 		<li><button id="ateriaNappi">Ateriavalikko</button></li>
       </ul>
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#">Kirjaudu</a></li>
+		<li><button id="kaikkiNappi">Näytä kaikki</button></li>
 		<li><button id="etusivuNappi">Etusivu</button></li>
 		<li><button id="ateriaNappi">Ateriavalikko</button></li>
       </ul>
@@ -34,7 +39,7 @@
 	
 		<!--kysymysmerkki ikoni-->
 		<div class="col s3" id="infoIkoni">
-			<img src="kuvat/kysymysmerkkinappi.png">
+			<a id="ohjeNappi"><i class="large material-icons">help_outline</i></a>
 			<p>Ohjeet</p>
 		</div>
 		
@@ -57,64 +62,85 @@
 		<div class="col s12 m6" id="viikonpaivaLista">
 		
 			<!--MA-->
-			<div class="col s12 pink lighten-1" id="ma">
-				<div class="col s8 vkpNimi">maanantai</div>
-				<div class="col s4 paivays">26.3.2018</div>
-				<br><br>
-				<div class="col s8">
-				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+			<div class="col s12" id="ma">
+				<div class="col s12 grey korttiOtsikko">
+					<div class="col s8 vkpNimi">maanantai</div>
+					<div class="col s4 paivays">26.3.2018</div>
 				</div>
-				<div class="col s4 hinta">00 €</div>
-				<br><br>
+				<div class="col s12 pink lighten-1 korttiSisalto">
+					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<br><br>
+					<div class="col s8">
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi">valitse ateria</a>
+					</div>
+					<div class="col s4 hinta">00 €</div>
+				</div>
 			</div>
 			
 			<!--TI-->
-			<div class="col s12 pink lighten-1" id="ti">
-				<div class="col s8 vkpNimi">tiistai</div>
-				<div class="col s4 paivays">27.3.2018</div>
-				<br><br>
-				<div class="col s8">
-				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+			<div class="col s12" id="ti">
+				<div class="col s12 grey korttiOtsikko">
+					<div class="col s8 vkpNimi">tiistai</div>
+					<div class="col s4 paivays">27.3.2018</div>
 				</div>
-				<div class="col s4 hinta">00 €</div>
-				<br><br>
+				<div class="col s12 pink lighten-1 korttiSisalto">
+					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<br><br>
+					<div class="col s8">
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi">valitse ateria</a>
+					</div>
+					<div class="col s4 hinta">00 €</div>
+				</div>
 			</div>
 			
 			<!--KE-->
-			<div class="col s12 pink lighten-1" id="ke">
-				<div class="col s8 vkpNimi">keskiviikko</div>
-				<div class="col s4 paivays">28.3.2018</div>
-				<br><br>
-				<div class="col s8">
-				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+			<div class="col s12" id="ke">
+				<div class="col s12 grey korttiOtsikko">
+					<div class="col s8 vkpNimi">keskiviikko</div>
+					<div class="col s4 paivays">28.3.2018</div>
 				</div>
-				<div class="col s4 hinta">00 €</div>
-				<br><br>
+				<div class="col s12 pink lighten-1 korttiSisalto">
+					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<br><br>
+					<div class="col s8">
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi">valitse ateria</a>
+					</div>
+					<div class="col s4 hinta">00 €</div>
+				</div>
 			</div>
 			
 			<!--TO-->
-			<div class="col s12 pink lighten-1" id="to">
-				<div class="col s8 vkpNimi">torstai</div>
-				<div class="col s4 paivays">29.3.2018</div>
-				<br><br>
-				<div class="col s8">
-				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+			<div class="col s12" id="to">
+				<div class="col s12 grey korttiOtsikko">
+					<div class="col s8 vkpNimi">torstai</div>
+					<div class="col s4 paivays">29.3.2018</div>
 				</div>
-				<div class="col s4 hinta">00 €</div>
-				<br><br>
+				<div class="col s12 pink lighten-1 korttiSisalto">
+					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<br><br>
+					<div class="col s8">
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi">valitse ateria</a>
+					</div>
+					<div class="col s4 hinta">00 €</div>
+				</div>
 			</div>
 			
 			<!--PE-->
-			<div class="col s12 pink lighten-1" id="pe">
-				<div class="col s8 vkpNimi">perjantai</div>
-				<div class="col s4 paivays">30.3.2018</div>
-				<br><br>
-				<div class="col s8">
-				<a class="waves-effect waves-light btn-large cyan">valitse ateria</a>
+			<div class="col s12" id="pe">
+				<div class="col s12 grey korttiOtsikko">
+					<div class="col s8 vkpNimi">mperjantai</div>
+					<div class="col s4 paivays">30.3.2018</div>
 				</div>
-				<div class="col s4 hinta">00 €</div>
-				<br><br>
-			</div>	
+				<div class="col s12 pink lighten-1 korttiSisalto">
+					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<br><br>
+					<div class="col s8">
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi">valitse ateria</a>
+					</div>
+					<div class="col s4 hinta">00 €</div>
+				</div>
+			</div>
+			
 		</div>
 		
 		<div class="col s12 m6" id="tilausTiedot">
@@ -122,10 +148,15 @@
 			<div class="col s12" id="hintaYht">
 			<h4>Hinta yhteensä: 00 €</h4><br>
 			</div>
-			<!--Koko nimi-->
-			<div class="input-field col s12" id="kokoNimi">
-				<input placeholder="Kirjoita tähän etunimesi ja sukunimesi" id="nimi" type="text" class="validate">
-				<label class="active blue-text" for="nimi">Koko nimi</label>
+			<!--etunimi-->
+			<div class="input-field col s12" id="etuNimi">
+				<input placeholder="Kirjoita tähän etunimesi" id="eNimi" type="text" class="validate">
+				<label class="active blue-text" for="nimi">Etunimesi</label>
+			</div>
+			<!--sukunimi-->
+			<div class="input-field col s12" id="sukuNimi">
+				<input placeholder="Kirjoita tähän sukunimesi" id="sNimi" type="text" class="validate">
+				<label class="active blue-text" for="nimi">Sukunimesi</label>
 			</div>
 			<!--Puhelin-->
 			<div class="input-field col s12" id="puhelin">
@@ -150,7 +181,7 @@
 		<div class="col s12" id="valikko">
 			<ul class="collapsible" id="ateriaPalkki">
 				<li>
-				  <div class="collapsible-header">Kategoria 1</div>
+				  <div class="collapsible-header" id="liha">Liharuoat</div>
 				  <div class="collapsible-body ateriaLista">
 						
 					<ul class="collection">
@@ -169,6 +200,7 @@
 									</p>
 								</div>
 								<div class="col s12 m5 ateriaPohja">
+									<p class="erikoisRv">Erikoista</p>
 									<p class="ateriaHinta">00 €</p>
 									<a class="ateriaNappi waves-effect waves-light btn-large green">valitse ateria</a>
 								</div>
@@ -182,9 +214,15 @@
 								</div>
 								<div class="col s12 m7">
 									<span class="ateriaNimi">Aterian Nimi</span>
-									<p class="ateriaTeksti">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+									<p class="ateriaTeksti">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									</p>
 								</div>
 								<div class="col s12 m5 ateriaPohja">
+									<p class="erikoisRv">Erikoista</p>
 									<p class="ateriaHinta">00 €</p>
 									<a class="ateriaNappi waves-effect waves-light btn-large green">valitse ateria</a>
 								</div>
@@ -195,11 +233,15 @@
 				  </div>
 				</li>
 				<li>
-				  <div class="collapsible-header">Kategoria 2</div>
+				  <div class="collapsible-header" id="kala">Kalaruoat</div>
 				  <div class="collapsible-body ateriaLista"><span>Lorem ipsum dolor sit amet.</span></div>
 				</li>
 				<li>
-				  <div class="collapsible-header">Kategoria 3</div>
+				  <div class="collapsible-header" id="kana">Kanaruoat</div>
+				  <div class="collapsible-body ateriaLista"><span>Lorem ipsum dolor sit amet.</span></div>
+				</li>
+				<li>
+				  <div class="collapsible-header" id="kasvis">Kasvisruoat</div>
 				  <div class="collapsible-body ateriaLista"><span>Lorem ipsum dolor sit amet.</span></div>
 				</li>
 			</ul>
