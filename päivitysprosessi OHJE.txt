@@ -1,9 +1,0 @@
-C:\hessu>
-
-git add .
-
-git commit -m ""
-
-git push github master
-
-RINSE AND REPEAT
