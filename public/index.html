@@ -22,12 +22,14 @@
 		<li><button id="kaikkiNappi" style="background-color:yellow">Näytä kaikki</button></li>
 		<li><button id="etusivuNappi">Etusivu</button></li>
 		<li><button id="ateriaNappi">Ateriavalikko</button></li>
+		<li><button id="loppuNappi">Loppusivu</button></li>
       </ul>
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#">Kirjaudu</a></li>
 		<li><button id="kaikkiNappi">Näytä kaikki</button></li>
 		<li><button id="etusivuNappi">Etusivu</button></li>
 		<li><button id="ateriaNappi">Ateriavalikko</button></li>
+		<li><button id="loppuNappi">Loppusivu</button></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   </nav>
@@ -39,7 +41,7 @@
 	
 		<!--kysymysmerkki ikoni-->
 		<div class="col s3" id="infoIkoni">
-			<a id="ohjeNappi"><i class="large material-icons">help_outline</i></a>
+			<a class="modal-trigger" href="#infoModaali" id="ohjeNappi"><i class="large material-icons" >help_outline</i></a>
 			<p>Ohjeet</p>
 		</div>
 		
@@ -55,6 +57,21 @@
 				<option value="2">SE</option>
 			</select>
 		</div>
+
+		  <!-- Info Modaali -->
+		  <div id="infoModaali" class="modal">
+			<div class="modal-content">
+			  <h1 id="infoOtsikko">Ohjeet sivun käyttöön</h1>
+			  <p id="infoText">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+			Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+			Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+			Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+			Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+			</div>
+			<div class="modal-footer">
+			  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sulje</a>
+			</div>
+		  </div>
 		
 	</div>
 	<br><br>
@@ -73,7 +90,7 @@
 					<div class="col s8">
 					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi">valitse ateria</a>
 					</div>
-					<div class="col s4 hinta">00 €</div>
+					<div class="col s4 hinta">00,00 €</div>
 				</div>
 			</div>
 			
@@ -146,7 +163,7 @@
 		<div class="col s12 m6" id="tilausTiedot">
 		
 			<div class="col s12" id="hintaYht">
-			<h4>Hinta yhteensä: 00 €</h4><br>
+			<h4>Hinta yhteensä: 00,00 €</h4><br>
 			</div>
 			<!--etunimi-->
 			<div class="input-field col s12" id="etuNimi">
@@ -184,7 +201,7 @@
 				  <div class="collapsible-header" id="liha">Liharuoat</div>
 				  <div class="collapsible-body ateriaLista">
 						
-					<ul class="collection">
+					<ul class="collection" id="lihaAteriat">
 							<!--YKSI ATERIA START-->
 							<li class="collection-item ateria">
 								<div class="col s12 ateriaKuva">
@@ -199,9 +216,12 @@
 									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
 									</p>
 								</div>
+								<div class="col s12 m5 erikoisRuoka">
+									<p class="erikoisRv">Laktoositon</p>
+									<p class="erikoisRv">Gluteeniton</p>
+								</div>
 								<div class="col s12 m5 ateriaPohja">
-									<p class="erikoisRv">Erikoista</p>
-									<p class="ateriaHinta">00 €</p>
+									<p class="ateriaHinta">00,00 €</p>
 									<a class="ateriaNappi waves-effect waves-light btn-large green">valitse ateria</a>
 								</div>
 							</li>
@@ -221,8 +241,10 @@
 									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
 									</p>
 								</div>
+								<div class="col s12 m5 erikoisRuoka">
+									<p class="erikoisRv">Vähälaktoosinen</p>
+								</div>
 								<div class="col s12 m5 ateriaPohja">
-									<p class="erikoisRv">Erikoista</p>
 									<p class="ateriaHinta">00 €</p>
 									<a class="ateriaNappi waves-effect waves-light btn-large green">valitse ateria</a>
 								</div>
@@ -247,7 +269,88 @@
 			</ul>
 		</div>
 	</div>
-  
+	
+	<div class="row" id="loppuSivu">
+		<div class="cont s12 loppuSisalto">
+			<h1 id="loppuOtsikko">Kiitos tilauksesta!</h1>
+			<p id="loppuText1">Tässä on vielä tiedot tilauksestasi</p>
+			<table>
+				<tbody>
+				  <tr>
+					<th>Nimesi</th>
+					<td>Koko Nimi</td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<th>Puhelinnumerosi</th>
+					<td>123 456789</td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<th>Osoitteesi</th>
+					<td>Osoitekatu 12</td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<th>Hinta yhteensä</th>
+					<td>00,00 €</td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<th></th>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<th>Viikonpäivä</th>
+					<th>Päivämäärä</th>
+					<th>Ateria</th>
+					<th>Hinta</th>
+				  </tr>
+				  <!--MA-->
+				  <tr>
+				  <td>Maanantai</td>
+				  <td>26.3.2018</td>
+				  <td>Nakkikeitto</td>
+				  <td>00,00 €</td>
+				  </tr>
+				  <!--TI-->
+				  <tr>
+				  <td>Tiistai</td>
+				  <td>27.3.2018</td>
+				  <td>Härkäruukku</td>
+				  <td>00,00 €</td>
+				  </tr>
+				  <!--KE-->
+				  <tr>
+				  <td>Keskiviikko</td>
+				  <td>28.3.2018</td>
+				  <td>Kaalikeitto</td>
+				  <td>00,00 €</td>
+				  </tr>
+				  <!--TO-->
+				  <tr>
+				  <td>Torstai</td>
+				  <td>29.3.2018</td>
+				  <td>Uunimakkara ja perunamuusi</td>
+				  <td>00,00 €</td>
+				  </tr>
+				  <!--PE-->
+				  <tr>
+				  <td>Perjantai</td>
+				  <td>30.3.2018</td>
+				  <td>Hernekeitto</td>
+				  <td>00,00 €</td>
+				  </tr>
+				</tbody>
+		  </table>
+		</div>
+	</div>
     <br><br>
   </div>
 

@@ -42,6 +42,14 @@
 	float: right;
 }
 
+#infoModaali h1{
+	margin: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 26px;
+}
+
 /*ALOITUS SIVU*/
 
 /*content viikonpäivälista*/
@@ -60,7 +68,7 @@
 	margin-top: 5px;
 }
 .hinta{
-	font-size: 200%;
+	font-size: 180%;
 	font-weight: bold;
 	color: white;
 	text-align: right;
@@ -129,7 +137,7 @@
    /* valid color */
    .input-field input[type=text].valid {
 	 font-size: 20px;
-	 color: green;
+	 color: #0099e6;
 	 box-shadow: none;
    }
    /* invalid color */
@@ -171,7 +179,7 @@
 	margin-left: -20px;
 }
 .ateria{
-	height: 480px;
+	height: 550px;
 }
 .ateriaKuva img{
 	width: 100%;
@@ -196,8 +204,9 @@
 	width: 170px;
 }
 .erikoisRv{
+	margin-right: 10px;
 	background-color: #80ff00;
-	width: 100px;
+	width: 170px;
 	text-align: center;
 	font-size: 20px;
 	padding: 6px;
@@ -219,7 +228,30 @@
 	background-color: #c4ff4d;
 }
 
+/*TILAUSVAHVISTUS SIVU*/
+#loppuOtsikko{
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+}
+#loppuText1{
+	font-size: 200%;
+}
 
+/*BREAKPOINTIT*/
+
+/*Breakpointti, kun ruudun leveys alle 768px*/
+@Media only screen and (max-width: 768px){
+	#hintaYht h4{
+		font-size: 27px;
+	}
+}
+/*Breakpointti, kun ruudun leveys alle 728px*/
+@Media only screen and (max-width: 728px){
+	.hinta{
+		font-size: 157%;
+	}
+}
 /*Breakpointti, kun ruudun leveys alle 685px*/
 @Media only screen and (max-width: 685px){
 	#hintaYht h4{
@@ -229,22 +261,35 @@
 /*Breakpointti, kun ruudun leveys alle 680px*/
 @Media only screen and (max-width: 680px){
 	.ateria{
-		height: 440px;
+		height: 510px;
+	}
+}
+/*Breakpointti, kun ruudun leveys alle 667px*/
+@Media only screen and (max-width: 667px){
+	#hintaYht h4{
+		font-size: 23px;
 	}
 }
 /*Breakpointti, kun ruudun leveys alle 600px*/
 @Media only screen and (max-width: 600px){
+	#hintaYht h4{
+		font-size: 32px;
+	}
 	.ateriaKuva1{
 		display: none;
 	}
 	.ateria{
-		height: 440px;
+		height: 490px;
 	}
 	.ateriaHinta, .ateriaNappi{
 		margin-top: -8px;
 	}
 }
+/*Breakpointti, kun ruudun leveys alle 364px*/
+@Media only screen and (max-width: 364px){
+	.hinta{
+		font-size: 157%;
+	}
 
 /*TESTAUS*/
-
 
