@@ -75,6 +75,7 @@
 		
 	</div>
 	<br><br>
+	<!--ETUSIVU-->
 	<div class="row" id="etuSivu">
 		<div class="col s12 m6" id="viikonpaivaLista">
 		
@@ -145,7 +146,7 @@
 			<!--PE-->
 			<div class="col s12" id="pe">
 				<div class="col s12 grey korttiOtsikko">
-					<div class="col s8 vkpNimi">mperjantai</div>
+					<div class="col s8 vkpNimi">perjantai</div>
 					<div class="col s4 paivays">30.3.2018</div>
 				</div>
 				<div class="col s12 pink lighten-1 korttiSisalto">
@@ -193,8 +194,49 @@
 		</div>
 		
 	</div>
-	
+	<!--ATERIAVALIKKO SIVU-->
 	<div class="row" id="ateriaValikko">
+		<div class="col s12" id="ateriaYlaValikko">
+			<h1>Maanantai</h1>
+			<div class="row">
+				<form class="col s12">
+				  <div class="row">
+					<div class="input-field col s9">
+					  <input id="ateriaHaku" type="text" class="validate">
+					  <label for="ateriaHaku">Hae ateriaa</label>
+					</div>
+					<a class="waves-effect waves-light btn cyan ateriaHakuNappi">hae</a>
+				  </div>
+				</form>
+				<a class="waves-effect waves-light btn pink lighten-2 takaisinNappi" id="takaisinNappi">Takaisin</a>
+			</div>
+			<div class="col s12" id="ateriaFiltteri">
+				<h1>Hakemaasi ateriaa ei löytynyt</h1>
+				<!--filtteröity ateria-->
+				<div class="filtteriAteria">
+								<div class="col s12 ateriaKuva">
+									<img class="ateriaKuva1" src="kuvat/safka2.png">
+								</div>
+								<div class="col s12 m7">
+									<span class="ateriaNimi">Aterian Nimi</span>
+									<p class="ateriaTeksti">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+								<div class="col s12 m5 erikoisRuoka">
+									<p class="erikoisRv">Laktoositon</p>
+									<p class="erikoisRv">Gluteeniton</p>
+								</div>
+								<div class="col s12 m5 ateriaPohja">
+									<p class="ateriaHinta">00,00 €</p>
+									<a class="ateriaNappi waves-effect waves-light btn-large green">lisää ateria</a>
+								</div>
+				</div>
+			</div>
+		</div>
 		<div class="col s12" id="valikko">
 			<ul class="collapsible" id="ateriaPalkki">
 				<li>

@@ -49,4 +49,11 @@ $(document).ready(function(){
 		$("#etuSivu").css("display", "none");
 		$("#loppuSivu").css("display", "block"); 
 	});
+	
+	// takaisinnapin painallus
+    $("#takaisinNappi").click(function(){ // näytetään etusivu
+		$("#ateriaValikko").css("display", "none");
+		$("#loppuSivu").css("display", "none"); 
+		$("#etuSivu").css("display", "block");
+	});
 });

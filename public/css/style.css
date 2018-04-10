@@ -19,6 +19,8 @@
 
 #headeri{
 	margin: auto;
+	border-bottom: 1px solid grey;
+	padding-bottom: 20px;
 }
 #infoIkoni a{
 	text-decoration: none;
@@ -181,7 +183,7 @@
 	padding-top: 10px;
 	margin-left: -20px;
 }
-.ateria{
+.ateria, .filtteriAteria{
 	height: 550px;
 }
 .ateriaKuva img{
@@ -217,6 +219,34 @@
 	color: white;
 	border-radius: 5px;
 }
+/*ateriavalikon yläpalkki*/
+#ateriaYlaValikko h1{
+	text-align: center;
+	color: #00ace6;
+}
+.ateriaHakuNappi{
+	margin-top: 10px;
+	width: 70px;
+	height: 40px;
+	padding-top: 2px;
+}
+.takaisinNappi{
+	height: 50px;
+	width: 100px;
+	margin-left: 10px;
+	padding-top: 5px;
+	font-size: 110%;
+}
+
+#ateriaFiltteri{
+	border-bottom: 1px solid grey;
+	padding: 10px;
+}
+#ateriaFiltteri h1{
+	font-size: 160%;
+	color: grey;
+}
+
 /*ruokalajikategorioiden ulkonäkö*/
 #liha{
 	background-color: #ff6666;
@@ -230,6 +260,8 @@
 #kasvis{
 	background-color: #c4ff4d;
 }
+
+
 
 /*TILAUSVAHVISTUS SIVU*/
 #loppuOtsikko{
@@ -263,7 +295,7 @@
 }
 /*Breakpointti, kun ruudun leveys alle 680px*/
 @Media only screen and (max-width: 680px){
-	.ateria{
+	.ateria, .filtteriAteria{
 		height: 510px;
 	}
 }
@@ -281,7 +313,7 @@
 	.ateriaKuva1{
 		display: none;
 	}
-	.ateria{
+	.ateria, .filtteriAteria{
 		height: 490px;
 	}
 	.ateriaHinta, .ateriaNappi{
@@ -294,5 +326,17 @@
 		font-size: 157%;
 	}
 
+}
 /*TESTAUS*/
-
+#etuSivu{
+	display: none;
+}
+#ateriaValikko{
+	
+}
+#loppuSivu{
+	display: none;
+}
+.filtteriAteria{ 
+	display: none;
+}
