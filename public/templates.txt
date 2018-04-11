@@ -1,0 +1,24 @@
+<!--YKSI ATERIA START-->
+	<li class="collection-item ateria">
+		<div class="col s12 ateriaKuva">
+			<img class="ateriaKuva1" src="kuvat/safka2.png">
+		</div>
+		<div class="col s12 m7">
+			<span class="ateriaNimi">Aterian Nimi</span>
+			<p class="ateriaTeksti">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+			Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+			Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+			Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+			Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+			</p>
+		</div>
+		<div class="col s12 m5 erikoisRuoka">
+			<p class="erikoisRv">Laktoositon</p>
+			<p class="erikoisRv">Gluteeniton</p>
+		</div>
+		<div class="col s12 m5 ateriaPohja">
+			<p class="ateriaHinta">00,00 €</p>
+			<a class="ateriaNappi waves-effect waves-light btn-large green">lisää ateria</a>
+		</div>
+	</li>
+<!--YKSI ATERIA END-->

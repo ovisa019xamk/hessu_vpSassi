@@ -183,7 +183,7 @@
 	padding-top: 10px;
 	margin-left: -20px;
 }
-.ateria, .filtteriAteria{
+.ateria{
 	height: 550px;
 }
 .ateriaKuva img{
@@ -295,7 +295,7 @@
 }
 /*Breakpointti, kun ruudun leveys alle 680px*/
 @Media only screen and (max-width: 680px){
-	.ateria, .filtteriAteria{
+	.ateria{
 		height: 510px;
 	}
 }
@@ -313,7 +313,7 @@
 	.ateriaKuva1{
 		display: none;
 	}
-	.ateria, .filtteriAteria{
+	.ateria{
 		height: 490px;
 	}
 	.ateriaHinta, .ateriaNappi{
@@ -338,5 +338,5 @@
 	display: none;
 }
 .filtteriAteria{ 
-	display: none;
+	
 }
