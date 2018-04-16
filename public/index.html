@@ -86,10 +86,10 @@
 					<div class="col s4 paivays">26.3.2018</div>
 				</div>
 				<div class="col s12 pink lighten-1 korttiSisalto">
-					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<div class="col s12 valittuAteria">Ateriaa ei valittu</div>
 					<br><br>
 					<div class="col s8">
-					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="ateriaValintaNappi">valitse ateria</a>
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="maNappi">valitse ateria</a>
 					</div>
 					<div class="col s4 hinta">00,00 €</div>
 				</div>
@@ -102,12 +102,12 @@
 					<div class="col s4 paivays">27.3.2018</div>
 				</div>
 				<div class="col s12 pink lighten-1 korttiSisalto">
-					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<div class="col s12 valittuAteria">Ateriaa ei valittu</div>
 					<br><br>
 					<div class="col s8">
-					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="ateriaValintaNappi">valitse ateria</a>
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="tiNappi">valitse ateria</a>
 					</div>
-					<div class="col s4 hinta">00 €</div>
+					<div class="col s4 hinta">00,00 €</div>
 				</div>
 			</div>
 			
@@ -118,12 +118,12 @@
 					<div class="col s4 paivays">28.3.2018</div>
 				</div>
 				<div class="col s12 pink lighten-1 korttiSisalto">
-					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<div class="col s12 valittuAteria">Ateriaa ei valittu</div>
 					<br><br>
 					<div class="col s8">
-					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="ateriaValintaNappi">valitse ateria</a>
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="keNappi">valitse ateria</a>
 					</div>
-					<div class="col s4 hinta">00 €</div>
+					<div class="col s4 hinta">00,00 €</div>
 				</div>
 			</div>
 			
@@ -134,12 +134,12 @@
 					<div class="col s4 paivays">29.3.2018</div>
 				</div>
 				<div class="col s12 pink lighten-1 korttiSisalto">
-					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<div class="col s12 valittuAteria">Ateriaa ei valittu</div>
 					<br><br>
 					<div class="col s8">
-					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="ateriaValintaNappi">valitse ateria</a>
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="toNappi">valitse ateria</a>
 					</div>
-					<div class="col s4 hinta">00 €</div>
+					<div class="col s4 hinta">00,00 €</div>
 				</div>
 			</div>
 			
@@ -150,12 +150,12 @@
 					<div class="col s4 paivays">30.3.2018</div>
 				</div>
 				<div class="col s12 pink lighten-1 korttiSisalto">
-					<div class="col s12 valittuAteria">Aterian nimi</div>
+					<div class="col s12 valittuAteria">Ateriaa ei valittu</div>
 					<br><br>
 					<div class="col s8">
-					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="ateriaValintaNappi">valitse ateria</a>
+					<a class="waves-effect waves-light btn-large cyan aterianValintaNappi" id="peNappi">valitse ateria</a>
 					</div>
-					<div class="col s4 hinta">00 €</div>
+					<div class="col s4 hinta">00,00 €</div>
 				</div>
 			</div>
 			
@@ -164,7 +164,7 @@
 		<div class="col s12 m6" id="tilausTiedot">
 		
 			<div class="col s12" id="hintaYht">
-			<h4>Hinta yhteensä: 00,00 €</h4><br>
+			<h4>Hinta yhteensä: <span id="yhteisHinta">00,00 €</span></h4><br>
 			</div>
 			<!--etunimi-->
 			<div class="input-field col s12" id="etuNimi">
@@ -178,12 +178,12 @@
 			</div>
 			<!--Puhelin-->
 			<div class="input-field col s12" id="puhelin">
-				<input placeholder="Kirjoita tähän puhelinnumerosi" id="nimi" type="text" class="validate">
+				<input placeholder="Kirjoita tähän puhelinnumerosi" id="puh" type="text" class="validate">
 				<label class="active blue-text" for="nimi">Puhelinnumero</label>
 			</div>
 			<!--Osoite-->
 			<div class="input-field col s12" id="osoite">
-				<input placeholder="Kirjoita tähän kotiosoitteesi" id="nimi" type="text" class="validate">
+				<input placeholder="Kirjoita tähän kotiosoitteesi" id="katu" type="text" class="validate">
 				<label class="active blue-text" for="nimi">Osoitteesi</label>
 			</div>
 			<!--Tilauspainike-->
@@ -197,7 +197,7 @@
 	<!--ATERIAVALIKKO SIVU-->
 	<div class="row" id="ateriaValikko">
 		<div class="col s12" id="ateriaYlaValikko">
-			<h1>Maanantai</h1>
+			<h1 id="ruokavalikkoOtsikko">Viikonpäivä</h1>
 			<div class="row">
 				<form class="col s12">
 				  <div class="row">
@@ -211,10 +211,9 @@
 				<a class="waves-effect waves-light btn pink lighten-2 takaisinNappi" id="takaisinNappi">Takaisin</a>
 			</div>
 			<div class="col s12" id="ateriaFiltteri">
-				<h1>Hakemaasi ateriaa ei löytynyt</h1>
+				<h1 id="ateriaFiltteriTeksti">Hakemaasi ateriaa ei löytynyt</h1>
 				<!--filtteröity ateria-->
-				<ul class="filtteriAteria" id="filtteriAteria">
-								
+				<ul class="filtteriAteria" id="filtteriAteria">		
 				</ul>
 			</div>
 		</div>
@@ -253,7 +252,7 @@
 			<h1 id="loppuOtsikko">Kiitos tilauksesta!</h1>
 			<p id="loppuText1">Tässä on vielä tiedot tilauksestasi</p>
 			<table>
-				<tbody>
+				<tbody id="tulostus">
 				  <tr>
 					<th>Nimesi</th>
 					<td>Koko Nimi</td>

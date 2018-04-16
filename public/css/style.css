@@ -70,7 +70,7 @@
 	margin-top: 5px;
 }
 .hinta{
-	font-size: 180%;
+	font-size: 22px;
 	font-weight: bold;
 	color: white;
 	text-align: right;
@@ -204,7 +204,7 @@
 	text-align: right;
 	font-size: 40px;
 }
-.ateriaNappi{
+.ateriaValitseNappi{
 	float: right;
 	width: 170px;
 }
@@ -246,6 +246,9 @@
 	font-size: 160%;
 	color: grey;
 }
+#filtteriAteria{
+	height: 20px;
+}
 
 /*ruokalajikategorioiden ulkonäkö*/
 #liha{
@@ -281,12 +284,6 @@
 		font-size: 27px;
 	}
 }
-/*Breakpointti, kun ruudun leveys alle 728px*/
-@Media only screen and (max-width: 728px){
-	.hinta{
-		font-size: 157%;
-	}
-}
 /*Breakpointti, kun ruudun leveys alle 685px*/
 @Media only screen and (max-width: 685px){
 	#hintaYht h4{
@@ -320,23 +317,17 @@
 		margin-top: -8px;
 	}
 }
-/*Breakpointti, kun ruudun leveys alle 364px*/
-@Media only screen and (max-width: 364px){
-	.hinta{
-		font-size: 157%;
-	}
 
-}
 /*TESTAUS*/
 #etuSivu{
-	display: none;
+	
 }
 #ateriaValikko{
 	
 }
 #loppuSivu{
-	display: none;
+	
 }
 .filtteriAteria{ 
-	
+	display: none;
 }
