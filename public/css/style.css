@@ -281,13 +281,7 @@
 /*Breakpointti, kun ruudun leveys alle 768px*/
 @Media only screen and (max-width: 768px){
 	#hintaYht h4{
-		font-size: 27px;
-	}
-}
-/*Breakpointti, kun ruudun leveys alle 685px*/
-@Media only screen and (max-width: 685px){
-	#hintaYht h4{
-	font-size: 27px;
+		font-size: 23px;
 	}
 }
 /*Breakpointti, kun ruudun leveys alle 680px*/
@@ -296,16 +290,10 @@
 		height: 510px;
 	}
 }
-/*Breakpointti, kun ruudun leveys alle 667px*/
-@Media only screen and (max-width: 667px){
-	#hintaYht h4{
-		font-size: 23px;
-	}
-}
 /*Breakpointti, kun ruudun leveys alle 600px*/
 @Media only screen and (max-width: 600px){
 	#hintaYht h4{
-		font-size: 32px;
+		font-size: 30px;
 	}
 	.ateriaKuva1{
 		display: none;
