@@ -32,6 +32,13 @@
 	font-weight: bold;
 	color: #00ace6;
 }
+#infoOtsikko{
+	background-color: red;
+	color: white;
+}
+#infoText{
+	font-size: 25px;
+}
 #logo{
 	text-align: center;
 }
@@ -51,6 +58,18 @@
 	text-align: center;
 	font-size: 26px;
 }
+/*TAUSTA ASETUKSET*/
+#taustaKuva{
+	background-image: url("../kuvat/testitausta.png");
+	height: auto;
+    max-width: 100%;
+	z-index: -1;
+}
+#sisalto{
+	background-color: blue;
+	padding: 10px;
+}
+
 
 /*ALOITUS SIVU*/
 
@@ -274,6 +293,7 @@
 }
 #loppuText1{
 	font-size: 200%;
+	text-align: center;
 }
 
 /*BREAKPOINTIT*/
@@ -311,10 +331,10 @@
 	
 }
 #ateriaValikko{
-	
+	display: none;
 }
 #loppuSivu{
-	
+	display: none;
 }
 .filtteriAteria{ 
 	display: none;

@@ -33,6 +33,52 @@ $(document).ready(function(){
 		}
 	});
 	
+	// taustavärien ja taustakuvien asetukset
+	
+	// tehdään booleja joiden avulla katsotaan taustan väri
+	var etuSivuTausta = true;
+	var ateriaSivuTausta = false;
+	var lopetusSivuTausta = false;
+	// määritetään halutut elementit sivulta
+	var tausta = $("#sisalto");
+	var taustakuva = $("#taustaKuva");
+	// käytetään booleja määrittämään vielä ohjeboksin sisältö
+	var ohjeOtsikko = $("#infoOtsikko");
+	var ohjeTeksti = $("#infoText");
+	
+	// käydään vielä taustavaihto funktio läpi käynnistäessä
+	taustavaihto();
+	
+	function taustavaihto(){
+		// jos etusivu on aktiivisena
+		if(etuSivuTausta == true){
+			// vaihdetaan taustan väri
+			$(tausta).css("background-color","red");
+			// vaihdetaan sivun reunoilla näkyvä kuva
+			$(taustakuva).css("backgroundImage","url('../kuvat/testitausta2.png')")
+			// vaihdetaan ohjeboksin otsikko ja sisältöteksti
+			$(ohjeOtsikko).html("Etusivu");
+			$(ohjeOtsikko).css("background-color","red");
+			$(ohjeTeksti).html("Ohjeet etusivulle");
+		}// jos aterianvalintasivu on aktiivisena
+		else if (ateriaSivuTausta == true){
+			$(tausta).css("background-color","blue");
+			$(taustakuva).css("backgroundImage","url('../kuvat/testitausta3.png')")
+			
+			$(ohjeOtsikko).html("Ateriavalikko");
+			$(ohjeOtsikko).css("background-color","blue");
+			$(ohjeTeksti).html("Ohjeet ateriavalikkoon");
+		}// jos tilausvahvistussivu on aktiivisena
+		else if (lopetusSivuTausta == true){
+			$(tausta).css("background-color","green");
+			$(taustakuva).css("backgroundImage","url('../kuvat/testitausta4.png')")
+			
+			$(ohjeOtsikko).html("Tilausvahvistus sivu");
+			$(ohjeOtsikko).css("background-color","green");
+			$(ohjeTeksti).html("Voit sulkea selaimen");
+		}
+	}
+	
 	function tulosta(result){
 		
 		var ateriaMenu = result.ruokalista;
@@ -133,6 +179,13 @@ $(document).ready(function(){
 		$("#etuSivu").css("display", "block");
 		// hypätään sivun ylälaitaan
 		$(window).scrollTop(0);
+		// määritetään mikä sivu on aktiivisena
+		etuSivuTausta = true;
+		ateriaSivuTausta = false;
+		lopetusSivuTausta = false;
+		// taustavaihto funktio
+		taustavaihto();
+		
 	});
 	
 // VIIKONPÄIVÄ NAPIT
@@ -162,6 +215,13 @@ $(document).ready(function(){
 		$("#maNappi").html("Vaihda ateriaa").css("font-size","14px");
 		// hypätään sivun ylälaitaan
 		$(window).scrollTop(0);
+		// määritetään, että aterianvalintasivu on aktiivisena
+		etuSivuTausta = false;
+		ateriaSivuTausta = true;
+		lopetusSivuTausta = false;
+		// taustavaihto funktio
+		taustavaihto();
+		
 	});
 	
 	//tiistai
@@ -179,6 +239,11 @@ $(document).ready(function(){
 		
 		$("#tiNappi").html("Vaihda ateriaa").css("font-size","14px");
 		$(window).scrollTop(0);
+		etuSivuTausta = false;
+		ateriaSivuTausta = true;
+		lopetusSivuTausta = false;
+		taustavaihto();
+		
 	});
 	
 	//keskiviikko
@@ -196,6 +261,11 @@ $(document).ready(function(){
 		
 		$("#keNappi").html("Vaihda ateriaa").css("font-size","14px");
 		$(window).scrollTop(0);
+		etuSivuTausta = false;
+		ateriaSivuTausta = true;
+		lopetusSivuTausta = false;
+		taustavaihto();
+		
 	});
 	
 	//torstai
@@ -213,6 +283,11 @@ $(document).ready(function(){
 		
 		$("#toNappi").html("Vaihda ateriaa").css("font-size","14px");
 		$(window).scrollTop(0);
+		etuSivuTausta = false;
+		ateriaSivuTausta = true;
+		lopetusSivuTausta = false;
+		taustavaihto();
+		
 	});
 	
 	//perjantai
@@ -230,6 +305,11 @@ $(document).ready(function(){
 		
 		$("#peNappi").html("Vaihda ateriaa").css("font-size","14px");
 		$(window).scrollTop(0);
+		etuSivuTausta = false;
+		ateriaSivuTausta = true;
+		lopetusSivuTausta = false;
+		taustavaihto();
+		
 	});
 	
 // ATERIAN VALINTA
@@ -274,6 +354,10 @@ $(document).ready(function(){
 			if(ateriaNimiTeksti.length > 30){ // jos on yli 30 merkkiä
 				// pienennetään tulostuksen fonttikokoa
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
+			// katsotaan onko ruudun leveys 670px - 600px välillä
+			}else if(ateriaNimiTeksti.length > 20 && $(document).width() < 670 && $(document).width() > 600){
+				// pienennetään tulostuksen fonttikokoa
+				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
 			}else{ // jos teksti on alle 30 merkkiä
 				// kloonataan aterian nimi ja tulostetaan se haluttuun kohtaan normaalisti
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","24px");
@@ -303,6 +387,8 @@ $(document).ready(function(){
 			ateriaNimiTeksti = $(ruokaNimi).text();
 			if(ateriaNimiTeksti.length > 30){
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
+			}else if(ateriaNimiTeksti.length > 20 && $(document).width() < 670 && $(document).width() > 600){
+				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
 			}else{
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","24px");
 			}
@@ -322,6 +408,8 @@ $(document).ready(function(){
 			valittuRuoka.html("");		
 			ateriaNimiTeksti = $(ruokaNimi).text();
 			if(ateriaNimiTeksti.length > 30){
+				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
+			}else if(ateriaNimiTeksti.length > 20 && $(document).width() < 670 && $(document).width() > 600){
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
 			}else{
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","24px");
@@ -343,6 +431,8 @@ $(document).ready(function(){
 			ateriaNimiTeksti = $(ruokaNimi).text();
 			if(ateriaNimiTeksti.length > 30){
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
+			}else if(ateriaNimiTeksti.length > 20 && $(document).width() < 670 && $(document).width() > 600){
+				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
 			}else{
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","24px");
 			}
@@ -362,6 +452,8 @@ $(document).ready(function(){
 			valittuRuoka.html("");		
 			ateriaNimiTeksti = $(ruokaNimi).text();
 			if(ateriaNimiTeksti.length > 30){
+				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
+			}else if(ateriaNimiTeksti.length > 20 && $(document).width() < 670 && $(document).width() > 600){
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","15px");
 			}else{
 				$(ruokaNimi).clone().appendTo(valittuRuoka).css("font-size","24px");
@@ -391,6 +483,12 @@ $(document).ready(function(){
 		
 		// hypätään vielä lopuksi sivun ylälaitaan takaisin
 		$(window).scrollTop(0);
+		etuSivuTausta = true;
+		ateriaSivuTausta = false;
+		lopetusSivuTausta = false;
+		// taustanvaihto funktio
+		taustavaihto();
+		
 	});
 	
 	
@@ -439,22 +537,22 @@ $(document).ready(function(){
 			$(hintaMa).html(maHinta.toFixed(2) + " €");
 			
 			// ti
-			var nimiTi = tulostus.children().eq(6).children().eq(2);
+			var nimiTi = tulostus.children().eq(7).children().eq(2);
 			$(nimiTi).html($(tiNimi).css("font-size","15px"));
 			var hintaTi = tulostus.children().eq(7).children().eq(3);
 			$(hintaTi).html(tiHinta.toFixed(2) + " €");
 			// ke
-			var nimiKe = tulostus.children().eq(6).children().eq(2);
+			var nimiKe = tulostus.children().eq(8).children().eq(2);
 			$(nimiKe).html($(keNimi).css("font-size","15px"));
 			var hintaKe = tulostus.children().eq(8).children().eq(3);
 			$(hintaKe).html(keHinta.toFixed(2) + " €");
 			// to
-			var nimiTo = tulostus.children().eq(6).children().eq(2);
+			var nimiTo = tulostus.children().eq(9).children().eq(2);
 			$(nimiTo).html($(toNimi).css("font-size","15px"));
 			var hintaTo = tulostus.children().eq(9).children().eq(3);
 			$(hintaTo).html(toHinta.toFixed(2) + " €");
 			// pe
-			var nimiPe = tulostus.children().eq(6).children().eq(2);
+			var nimiPe = tulostus.children().eq(10).children().eq(2);
 			$(nimiPe).html($(peNimi).css("font-size","15px"));
 			var hintaPe = tulostus.children().eq(10).children().eq(3);
 			$(hintaPe).html(peHinta.toFixed(2) + " €");
@@ -466,6 +564,13 @@ $(document).ready(function(){
 			
 			// hypätään sivun ylälaitaan
 			$(window).scrollTop(0);
+			
+			etuSivuTausta = false;
+			ateriaSivuTausta = false;
+			lopetusSivuTausta = true;
+			// taustanvaihto funktio
+			taustavaihto();
+			
 		
 		}else{
 			console.log("jotain puuttuu");
@@ -481,6 +586,7 @@ $(document).ready(function(){
 		$("#ateriaValikko").css("display", "block");
 		$("#etuSivu").css("display", "block");
 		$("#loppuSivu").css("display", "block");
+		taustavaihto();
 	});
 	
 	// ateriavalikkonapin painallus
@@ -488,18 +594,21 @@ $(document).ready(function(){
 		$("#ateriaValikko").css("display", "block");
 		$("#etuSivu").css("display", "none");
 		$("#loppuSivu").css("display", "none"); 
+		taustavaihto();
 	});
 	// loppuSIvunapin painallus
 	$("#loppuNappi").click(function(){ // näytetään loppuSivu
 		$("#ateriaValikko").css("display", "none");
 		$("#etuSivu").css("display", "none");
-		$("#loppuSivu").css("display", "block"); 
+		$("#loppuSivu").css("display", "block");
+		taustavaihto();
 	});
 	// etusivunapin painallus
     $("#etusivuNappi").click(function(){ // näytetään etusivu
 		$("#ateriaValikko").css("display", "none");
 		$("#loppuSivu").css("display", "none"); 
 		$("#etuSivu").css("display", "block");
+		taustavaihto();
 	});
 	
 	
