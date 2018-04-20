@@ -18,9 +18,11 @@
 /*headeri*/
 
 #headeri{
-	margin: auto;
+	background-color: #ccff99;
 	border-bottom: 1px solid grey;
 	padding-bottom: 20px;
+	padding-top: 10px;
+	margin-top: -10px;
 }
 #infoIkoni a{
 	text-decoration: none;
@@ -31,6 +33,7 @@
 	margin-left: 20px;
 	font-weight: bold;
 	color: #00ace6;
+	
 }
 #infoOtsikko{
 	background-color: red;
@@ -43,8 +46,8 @@
 	text-align: center;
 }
 #logo img{
-	width: 150px;
-	height: 150px;
+	width: 250px;
+	height: 270px;
 }
 #kieliValikko{
 	width: 80px;
@@ -58,12 +61,24 @@
 	text-align: center;
 	font-size: 26px;
 }
+#modaalisulkuNappi{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/*FOOTTERI*/
+.footer-copyright{
+	text-align: center;
+}
+
 /*TAUSTA ASETUKSET*/
 #taustaKuva{
 	background-image: url("../kuvat/testitausta.png");
 	height: auto;
     max-width: 100%;
 	z-index: -1;
+	background-repeat-x: no-repeat;
 }
 #sisalto{
 	background-color: blue;
@@ -131,9 +146,11 @@
 #sisalto{
 	margin: auto;
 	max-width: 800px;
+	background-color: #4d4d4d;
 }
 #hintaYht{
 	text-align: center;
+	color:white;
 }
 #hintaYht h4{
 	font-size: 198%;
@@ -144,7 +161,7 @@
 /* label color */
    .input-field label {
      color: grey;
-	 font-size: 30px;
+	 font-size: 35px;
 	 margin-top: -22px;
 	 box-shadow: none;
    }
@@ -154,6 +171,7 @@
    }
    /* label underline focus color */
    .input-field input[type=text]:focus {
+	 color: white;
      box-shadow: 0 1px 0 0 #000;
 	 font-size: 20px;
 	 box-shadow: none;
@@ -167,7 +185,7 @@
    /* invalid color */
    .input-field input[type=text].invalid {
 	 color: red;
-     border-bottom: 1px solid #000;
+     border-bottom: 1px solid red;
      box-shadow: 0 1px 0 0 #000;
 	 box-shadow: none;
    }
@@ -185,6 +203,7 @@
 #tilausPainike{
 	width: 200px;
 	height: 60px;
+	font-size: 18px;
 }
 
 /*ATERIAVALIKKO SIVU*/
@@ -286,14 +305,27 @@
 
 
 /*TILAUSVAHVISTUS SIVU*/
+#loppuSivu{
+	padding: 10px;
+}
+#loppuSivu table{
+	background-color: white;
+}
+#loppuSivu th{
+	font-size: 18px;
+}
 #loppuOtsikko{
 	width: 100%;
-	padding: 10px;
-	text-align: center;
+	color: #66ccff;
 }
 #loppuText1{
 	font-size: 200%;
-	text-align: center;
+	color:white;
+}
+#loppuKuva{
+	float: right;
+	width: 200px;
+	margin-top: -200px;
 }
 
 /*BREAKPOINTIT*/
@@ -326,6 +358,11 @@
 	}
 }
 
+/*TESTIPALKIN PIILOTUS*/
+#testiPalkki{
+	display: none;
+}
+
 /*TESTAUS*/
 #etuSivu{
 	
@@ -337,5 +374,11 @@
 	display: none;
 }
 .filtteriAteria{ 
+	display: none;
+}
+#ateriaFiltteriForm{
+	display: none;
+}
+#ateriaFiltteri{
 	display: none;
 }

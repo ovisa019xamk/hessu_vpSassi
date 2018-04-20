@@ -50,32 +50,34 @@ $(document).ready(function(){
 	taustavaihto();
 	
 	function taustavaihto(){
+		
+		// komento, jos taustojen väriä halutaan muuttaa riippuen aktiivisesta sivusta
+		// $(tausta).css("background-color","#4d4d4d");
+		
 		// jos etusivu on aktiivisena
 		if(etuSivuTausta == true){
-			// vaihdetaan taustan väri
-			$(tausta).css("background-color","red");
 			// vaihdetaan sivun reunoilla näkyvä kuva
-			$(taustakuva).css("backgroundImage","url('../kuvat/testitausta2.png')")
+			$(taustakuva).css("backgroundImage","url('../kuvat/sivuTausta1.png')")
 			// vaihdetaan ohjeboksin otsikko ja sisältöteksti
-			$(ohjeOtsikko).html("Etusivu");
-			$(ohjeOtsikko).css("background-color","red");
-			$(ohjeTeksti).html("Ohjeet etusivulle");
+			$(ohjeOtsikko).html("Ohjeet Etusivulle");
+			$(ohjeOtsikko).css("background-color","#99e600");
+			$(ohjeTeksti).html(" - Ainakin yksi ateria pitää olla valittuna, sekä myös nimi, puhelinnumero ja osoite tulee olla annettuna, että tilaus menee läpi <br> - 'Valitse Ateria' -painike avaa ateriavalikon valitulle viikonpäivälle <br> - Valitun aterian voi vaihtaa painamalla 'Vaihda Ateriaa' -painiketta");
+			// vaihdetaan headerin taustaväriä
+			$("#headeri").css("background-color","#ccff99")
 		}// jos aterianvalintasivu on aktiivisena
 		else if (ateriaSivuTausta == true){
-			$(tausta).css("background-color","blue");
-			$(taustakuva).css("backgroundImage","url('../kuvat/testitausta3.png')")
+			$(taustakuva).css("backgroundImage","url('../kuvat/sivuTausta2.png')")
 			
-			$(ohjeOtsikko).html("Ateriavalikko");
-			$(ohjeOtsikko).css("background-color","blue");
-			$(ohjeTeksti).html("Ohjeet ateriavalikkoon");
+			$(ohjeOtsikko).html("Ohjeet Ateriavalikon käyttöön");
+			$(ohjeOtsikko).css("background-color","#ff3377");
+			$(ohjeTeksti).html("- Alla olevia kategoriapalkkeja painamalla voit avata sen kategorian ateriat <br> - Aterioiden alla oleva 'Lisää Ateria' -painike lisää sen sille viikonpäivälle minkä olet valinnut");
+			
+			$("#headeri").css("background-color","#ff6699")
 		}// jos tilausvahvistussivu on aktiivisena
 		else if (lopetusSivuTausta == true){
-			$(tausta).css("background-color","green");
-			$(taustakuva).css("backgroundImage","url('../kuvat/testitausta4.png')")
-			
-			$(ohjeOtsikko).html("Tilausvahvistus sivu");
-			$(ohjeOtsikko).css("background-color","green");
-			$(ohjeTeksti).html("Voit sulkea selaimen");
+			$(taustakuva).css("backgroundImage","url('../kuvat/sivuTausta3.png')")
+			// piilotetaan vielä headeri
+			$("#headeri").css("display","none");
 		}
 	}
 	
@@ -89,7 +91,7 @@ $(document).ready(function(){
 			// filtterialueen tuloste
 			$("#filtteriAteria").append( "<li class='collection-item ateria'>" + 
 			"<div class='col s12 ateriaKuva'>" + 
-			"<img class='ateriaKuva1' src='kuvat/safka2.png'>" + "</div>" +
+			"<img class='ateriaKuva1' src='kuvat/ateria.jpg'>" + "</div>" +
 			"<div class='col s12 m7 ateriaInfo'>" +
 			"<span class='ateriaNimi'>" + result.nimi + "</span>" +
 			"<p class='ateriaTeksti'>" + result.ainekset + "</p>" + "</div>" +
@@ -104,7 +106,7 @@ $(document).ready(function(){
 			if(result.ruokalaji == "liharuoka"){
 				$("#lihaAteriat").append( "<li class='collection-item ateria'>" + 
 				"<div class='col s12 ateriaKuva'>" + 
-				"<img class='ateriaKuva1' src='kuvat/safka2.png'>" + "</div>" +
+				"<img class='ateriaKuva1' src='kuvat/ateria.jpg'>" + "</div>" +
 				"<div class='col s12 m7 ateriaInfo'>" +
 				"<span class='ateriaNimi'>" + result.nimi + "</span>" +
 				"<p class='ateriaTeksti'>" + result.ainekset + "</p>" + "</div>" +
@@ -118,7 +120,7 @@ $(document).ready(function(){
 			 }else if(result.ruokalaji == "kalaruoka"){
 				$("#kalaAteriat").append( "<li class='collection-item ateria'>" + 
 				"<div class='col s12 ateriaKuva'>" + 
-				"<img class='ateriaKuva1' src='kuvat/safka2.png'>" + "</div>" +
+				"<img class='ateriaKuva1' src='kuvat/ateria.jpg'>" + "</div>" +
 				"<div class='col s12 m7 ateriaInfo'>" +
 				"<span class='ateriaNimi'>" + result.nimi + "</span>" +
 				"<p class='ateriaTeksti'>" + result.ainekset + "</p>" + "</div>" +
@@ -132,7 +134,7 @@ $(document).ready(function(){
 			 }else if(result.ruokalaji == "kanaruoka"){
 				$("#kanaAteriat").append( "<li class='collection-item ateria'>" + 
 				"<div class='col s12 ateriaKuva'>" + 
-				"<img class='ateriaKuva1' src='kuvat/safka2.png'>" + "</div>" +
+				"<img class='ateriaKuva1' src='kuvat/ateria.jpg'>" + "</div>" +
 				"<div class='col s12 m7 ateriaInfo'>" +
 				"<span class='ateriaNimi'>" + result.nimi + "</span>" +
 				"<p class='ateriaTeksti'>" + result.ainekset + "</p>" + "</div>" +
@@ -146,7 +148,7 @@ $(document).ready(function(){
 			}else if(result.ruokalaji == "kasvisruoka"){
 				$("#kasvisAteriat").append( "<li class='collection-item ateria'>" + 
 				"<div class='col s12 ateriaKuva'>" + 
-				"<img class='ateriaKuva1' src='kuvat/safka2.png'>" + 
+				"<img class='ateriaKuva1' src='kuvat/ateria.jpg'>" + 
 				"</div>" +
 				"<div class='col s12 m7 ateriaInfo'>" +
 				"<span class='ateriaNimi'>" + result.nimi + "</span>" +
@@ -211,8 +213,6 @@ $(document).ready(function(){
 		keValittu = false;
 		toValittu = false;
 		peValittu = false;
-		// napin teksti
-		$("#maNappi").html("Vaihda ateriaa").css("font-size","14px");
 		// hypätään sivun ylälaitaan
 		$(window).scrollTop(0);
 		// määritetään, että aterianvalintasivu on aktiivisena
@@ -237,7 +237,6 @@ $(document).ready(function(){
 		toValittu = false;
 		peValittu = false;
 		
-		$("#tiNappi").html("Vaihda ateriaa").css("font-size","14px");
 		$(window).scrollTop(0);
 		etuSivuTausta = false;
 		ateriaSivuTausta = true;
@@ -259,7 +258,6 @@ $(document).ready(function(){
 		toValittu = false;
 		peValittu = false;
 		
-		$("#keNappi").html("Vaihda ateriaa").css("font-size","14px");
 		$(window).scrollTop(0);
 		etuSivuTausta = false;
 		ateriaSivuTausta = true;
@@ -281,7 +279,6 @@ $(document).ready(function(){
 		toValittu = true;
 		peValittu = false;
 		
-		$("#toNappi").html("Vaihda ateriaa").css("font-size","14px");
 		$(window).scrollTop(0);
 		etuSivuTausta = false;
 		ateriaSivuTausta = true;
@@ -303,7 +300,6 @@ $(document).ready(function(){
 		toValittu = false;
 		peValittu = true;
 		
-		$("#peNappi").html("Vaihda ateriaa").css("font-size","14px");
 		$(window).scrollTop(0);
 		etuSivuTausta = false;
 		ateriaSivuTausta = true;
@@ -326,6 +322,9 @@ $(document).ready(function(){
 	var keHinta = 0;
 	var toHinta = 0;
 	var peHinta = 0;
+	
+	// annetaan totuusarvo jonka avulla katsotaan onko ainakin yksi ateria valittu
+	var ateriaOnValittu = false;
 
 	$(document).on("click", ".ateriaValitseNappi",function(){
 		// haetaan parentin parentti, joka on (luokkanimi) ateria
@@ -378,6 +377,14 @@ $(document).ready(function(){
 			maHinta = $(ruokaHinta).text();
 			// parsitaan parseFloatilla tekstistä numeroita
 			maHinta = parseFloat(maHinta);
+			// vaihdetaan ateriakortin väriä materializen classeilla
+			$("#korttiMa").removeClass("pink lighten-1").addClass("light-green accent-2");
+			// muutetaan arvo todeksi
+			ateriaOnValittu = true;
+			// napin teksti vaihtuu
+			$("#maNappi").html("Vaihda ateriaa").css("font-size","14px");
+			// napin väri vaihtuu
+			$("#maNappi").removeClass("cyan").addClass("orange darken-2");
 			
 			
 		} else if(tiValittu == true){
@@ -401,6 +408,10 @@ $(document).ready(function(){
 			tiNimi = $(ruokaNimi);
 			tiHinta = $(ruokaHinta).text();
 			tiHinta = parseFloat(tiHinta);
+			$("#korttiTi").removeClass("pink lighten-1").addClass("light-green accent-2");
+			ateriaOnValittu = true;
+			$("#tiNappi").html("Vaihda ateriaa").css("font-size","14px");
+			$("#tiNappi").removeClass("cyan").addClass("orange darken-2");
 			
 		} else if(keValittu == true){
 			
@@ -423,6 +434,10 @@ $(document).ready(function(){
 			keNimi = $(ruokaNimi);
 			keHinta = $(ruokaHinta).text();
 			keHinta = parseFloat(keHinta);
+			$("#korttiKe").removeClass("pink lighten-1").addClass("light-green accent-2");
+			ateriaOnValittu = true;
+			$("#keNappi").html("Vaihda ateriaa").css("font-size","14px");
+			$("#keNappi").removeClass("cyan").addClass("orange darken-2");
 			
 		} else if(toValittu == true){
 			
@@ -445,6 +460,10 @@ $(document).ready(function(){
 			toNimi = $(ruokaNimi);
 			toHinta = $(ruokaHinta).text();
 			toHinta = parseFloat(toHinta);
+			$("#korttiTo").removeClass("pink lighten-1").addClass("light-green accent-2");
+			ateriaOnValittu = true;
+			$("#toNappi").html("Vaihda ateriaa").css("font-size","14px");
+			$("#toNappi").removeClass("cyan").addClass("orange darken-2");
 			
 		} else if(peValittu == true){
 			
@@ -467,6 +486,10 @@ $(document).ready(function(){
 			peNimi = $(ruokaNimi);
 			peHinta = $(ruokaHinta).text();
 			peHinta = parseFloat(peHinta);
+			$("#korttiPe").removeClass("pink lighten-1").addClass("light-green accent-2");
+			ateriaOnValittu = true;
+			$("#peNappi").html("Vaihda ateriaa").css("font-size","14px");
+			$("#peNappi").removeClass("cyan").addClass("orange darken-2");
 			
 		}
 		// lasketaan viikonpäivien ateriat yhteen tehden tekstistä numeroita parseFloatin avulla
@@ -506,7 +529,16 @@ $(document).ready(function(){
 			
 		var yhteisHinta = $("#yhteisHinta");
 		
-		if(eNimi != "" && sNimi != "" && puh != "" && katu != ""){
+		if(ateriaOnValittu == false){ // jos yhtäkään ateriaa ei ole valittu
+			// virheviesti
+			alert("Valitse ateria")
+			
+			} else if(eNimi == "" && sNimi == "" && puh == "" && katu == ""){ // jos yksikin tekstikenttä on tyhjä
+			// virheviesti
+			alert("Täytä kaikki tietokentät");
+			}
+			else{ // jos mitään ei ole pielessä
+			
 			// varille arvoksi lopetussivun table body
 			var tulostus = $("#tulostus");
 			
@@ -571,9 +603,6 @@ $(document).ready(function(){
 			// taustanvaihto funktio
 			taustavaihto();
 			
-		
-		}else{
-			console.log("jotain puuttuu");
 		}
 			
 	});
