@@ -9,6 +9,10 @@
 })(jQuery); // end of jQuery name space
   
 // OMA JQUERY
+
+// alustetaan tyhjä array
+var kaikkiTieto = [];
+
 $(document).ready(function(){
 	
 	// Materialize komponenttien koodit
@@ -26,7 +30,9 @@ $(document).ready(function(){
 		//url: "http://localhost:8000/api/", // localhost testaus
 		url: "/api/", // data json
 		success: function(result){
-			console.log(result);
+			// määritetään kaikkiTieto -Array tarkoittamaan JSONia
+			kaikkiTieto = result;
+			// tulosta funktio
 			tulosta(result);
 		},
 		error: function(xhr){
@@ -199,6 +205,12 @@ $(document).ready(function(){
 	var keValittu = false;
 	var toValittu = false;
 	var peValittu = false;
+	// vareille arvoksi viikonpäivien päivämäärät
+	var maPaiv = $("#maPaiv").text();
+	var tiPaiv = $("#tiPaiv").text();
+	var kePaiv = $("#kePaiv").text();
+	var toPaiv = $("#toPaiv").text();
+	var pePaiv = $("#pePaiv").text();
 
 	//maanantai
 	$("#maNappi").click(function(){
@@ -206,8 +218,8 @@ $(document).ready(function(){
 		$("#ateriaValikko").css("display", "block");
 		$("#etuSivu").css("display", "none");
 		$("#loppuSivu").css("display", "none"); 
-		// printataan viikonpäivän nimi sivun ylälaitaan
-		$("#ruokavalikkoOtsikko").html("Maanantai");
+		// printataan viikonpäivän nimi ja päivämäärä sivun ylälaitaan
+		$("#ruokavalikkoOtsikko").html("Maanantai" + " " + maPaiv);
 		// pistetään oikea bool todeksi ja kaikki muut epätodeksi
 		maValittu = true;
 		tiValittu = false;
@@ -231,7 +243,7 @@ $(document).ready(function(){
 		$("#etuSivu").css("display", "none");
 		$("#loppuSivu").css("display", "none"); 
 		
-		$("#ruokavalikkoOtsikko").html("Tiistai");
+		$("#ruokavalikkoOtsikko").html("Tiistai" + " " + tiPaiv);
 		maValittu = false;
 		tiValittu = true;
 		keValittu = false;
@@ -252,7 +264,7 @@ $(document).ready(function(){
 		$("#etuSivu").css("display", "none");
 		$("#loppuSivu").css("display", "none"); 
 		
-		$("#ruokavalikkoOtsikko").html("Keskiviikko");
+		$("#ruokavalikkoOtsikko").html("Keskiviikko" + " " + kePaiv);
 		maValittu = false;
 		tiValittu = false;
 		keValittu = true;
@@ -273,7 +285,7 @@ $(document).ready(function(){
 		$("#etuSivu").css("display", "none");
 		$("#loppuSivu").css("display", "none"); 
 		
-		$("#ruokavalikkoOtsikko").html("Torstai");
+		$("#ruokavalikkoOtsikko").html("Torstai" + " " + toPaiv);
 		maValittu = false;
 		tiValittu = false;
 		keValittu = false;
@@ -294,7 +306,7 @@ $(document).ready(function(){
 		$("#etuSivu").css("display", "none");
 		$("#loppuSivu").css("display", "none"); 
 		
-		$("#ruokavalikkoOtsikko").html("Perjantai");
+		$("#ruokavalikkoOtsikko").html("Perjantai" + " " + pePaiv);
 		maValittu = false;
 		tiValittu = false;
 		keValittu = false;
@@ -372,7 +384,8 @@ $(document).ready(function(){
 			$(valittuHinta).append(" €");
 			
 			// annetaan varille arvoksi valitun aterian nimi
-			maNimi = $(ruokaNimi);
+			maNimi = $(ruokaNimi).text();
+			
 			
 			//annetaan vareille arvoksi valitun aterian hinta tekstinä
 			maHinta = $(ruokaHinta).text();
@@ -406,7 +419,7 @@ $(document).ready(function(){
 			$(ruokaHinta).clone().appendTo(valittuHinta).css("font-size","22px");
 			$(valittuHinta).append(" €");
 			
-			tiNimi = $(ruokaNimi);
+			tiNimi = $(ruokaNimi).text();
 			tiHinta = $(ruokaHinta).text();
 			tiHinta = parseFloat(tiHinta);
 			$("#korttiTi").removeClass("pink lighten-1").addClass("light-green accent-2");
@@ -432,7 +445,7 @@ $(document).ready(function(){
 			$(ruokaHinta).clone().appendTo(valittuHinta).css("font-size","22px");	
 			$(valittuHinta).append(" €");
 			
-			keNimi = $(ruokaNimi);
+			keNimi = $(ruokaNimi).text();
 			keHinta = $(ruokaHinta).text();
 			keHinta = parseFloat(keHinta);
 			$("#korttiKe").removeClass("pink lighten-1").addClass("light-green accent-2");
@@ -458,7 +471,7 @@ $(document).ready(function(){
 			$(ruokaHinta).clone().appendTo(valittuHinta).css("font-size","22px");
 			$(valittuHinta).append(" €");
 			
-			toNimi = $(ruokaNimi);
+			toNimi = $(ruokaNimi).text();
 			toHinta = $(ruokaHinta).text();
 			toHinta = parseFloat(toHinta);
 			$("#korttiTo").removeClass("pink lighten-1").addClass("light-green accent-2");
@@ -484,7 +497,7 @@ $(document).ready(function(){
 			$(ruokaHinta).clone().appendTo(valittuHinta).css("font-size","22px");
 			$(valittuHinta).append(" €");
 			
-			peNimi = $(ruokaNimi);
+			peNimi = $(ruokaNimi).text();
 			peHinta = $(ruokaHinta).text();
 			peHinta = parseFloat(peHinta);
 			$("#korttiPe").removeClass("pink lighten-1").addClass("light-green accent-2");
@@ -540,6 +553,43 @@ $(document).ready(function(){
 			}
 			else{ // jos mitään ei ole pielessä
 			
+	/* JSON TALLENNUS *******************************************************************
+	
+			// luodaan objekti
+			var tilausTiedot = [{
+				nimi : eNimi + " " + sNimi,
+				puhelin : puh,
+				katuosoite : katu,
+				hinta : yhteisHinta.text(),
+				maanantai : maNimi + ", " + maHinta + " €",
+				tiistai : tiNimi + ", " + tiHinta + " €",
+				keskiviikko : keNimi + ", " + keHinta + " €",
+				torstai : toNimi + ", " + toHinta + " €",
+				perjantai : peNimi + ", " + peHinta + " €"
+			}];
+			var testi = JSON.stringify(tilausTiedot);
+			console.log(kaikkiTieto);
+			console.log(testi);
+			// pusketaan tilausTieto objektin tiedot JSONiin
+			kaikkiTieto.push(testi);
+			// stringifoidaan
+			var tieto = JSON.stringify(kaikkiTieto);
+			// pistetään tiedot JSONiin
+			$.ajax({
+				type: "POST",
+				url: "http://localhost:8000/api/", // localhost testaus
+				//url: "/api/", // data json
+				data: {"data" : tieto},
+				success: function(result){
+					console.log("Meni läpi");
+					//console.log(tieto);
+				},
+				error: function(xhr){
+					console.log("Virhe!");
+				}
+			});
+	*/
+			
 			// varille arvoksi lopetussivun table body
 			var tulostus = $("#tulostus");
 			
@@ -564,29 +614,29 @@ $(document).ready(function(){
 			// ma
 			// aterian nimi
 			var nimiMa = tulostus.children().eq(6).children().eq(2);
-			$(nimiMa).html($(maNimi).css("font-size","15px"));
+			$(nimiMa).html(maNimi);
 			// aterian hinta
 			var hintaMa = tulostus.children().eq(6).children().eq(3);
 			$(hintaMa).html(maHinta.toFixed(2) + " €");
 			
 			// ti
 			var nimiTi = tulostus.children().eq(7).children().eq(2);
-			$(nimiTi).html($(tiNimi).css("font-size","15px"));
+			$(nimiTi).html(tiNimi);
 			var hintaTi = tulostus.children().eq(7).children().eq(3);
 			$(hintaTi).html(tiHinta.toFixed(2) + " €");
 			// ke
 			var nimiKe = tulostus.children().eq(8).children().eq(2);
-			$(nimiKe).html($(keNimi).css("font-size","15px"));
+			$(nimiKe).html(keNimi);
 			var hintaKe = tulostus.children().eq(8).children().eq(3);
 			$(hintaKe).html(keHinta.toFixed(2) + " €");
 			// to
 			var nimiTo = tulostus.children().eq(9).children().eq(2);
-			$(nimiTo).html($(toNimi).css("font-size","15px"));
+			$(nimiTo).html(toNimi);
 			var hintaTo = tulostus.children().eq(9).children().eq(3);
 			$(hintaTo).html(toHinta.toFixed(2) + " €");
 			// pe
 			var nimiPe = tulostus.children().eq(10).children().eq(2);
-			$(nimiPe).html($(peNimi).css("font-size","15px"));
+			$(nimiPe).html(peNimi);
 			var hintaPe = tulostus.children().eq(10).children().eq(3);
 			$(hintaPe).html(peHinta.toFixed(2) + " €");
 			
