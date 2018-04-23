@@ -16,6 +16,8 @@ _sisältää: ruokalajikategoriavalikon, jonka kategoriakortit avaavat yksittäi
 
 _sisältää: kiitosviestin ja tilauksen tiedot listattuna_
 
+
+
 _(jos jää aikaa)_
 ## omistajan hallinnointisivu
 
