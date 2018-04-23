@@ -23,7 +23,7 @@ $(document).ready(function(){
 	
 	$.ajax({
 		method: "GET", //haetaan
-		url: "http://localhost:8000/api/", // data json
+		url: "/api/hessu/data/data.json", // data json
 		success: function(result){
 			
 			tulosta(result);
