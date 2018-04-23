@@ -23,10 +23,10 @@ $(document).ready(function(){
 	
 	$.ajax({
 		method: "GET", //haetaan
-		// http://localhost:8000/api/
-		url: "/api/data/data.json", // data json
+		//url: "http://localhost:8000/api/", // localhost testaus
+		url: "/api/", // data json
 		success: function(result){
-			
+			console.log(result);
 			tulosta(result);
 		},
 		error: function(xhr){
