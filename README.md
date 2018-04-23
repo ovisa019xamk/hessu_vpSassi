@@ -16,11 +16,16 @@ _sisältää: ruokalajikategoriavalikon, jonka kategoriakortit avaavat yksittäi
 
 _sisältää: kiitosviestin ja tilauksen tiedot listattuna_
 
-## aterialistan muokkaussivu (omistajalle)
+_(jos jää aikaa)_
+## omistajan hallinnointisivu
 
 * **sisäänkirjautumissivu**
 
 _sisältää: inputtikentät käyttäjänimelle ja salasanalle, sekä sisäänkirjautumis -napin_
+
+* **Tilausten listaus**
+
+_sisältää: tehdyt tilaukset siististi listattuna, sekä painikkeen listan tyhjentämiseen_
 
 * **muokkaussivu**
 
