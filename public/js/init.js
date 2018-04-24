@@ -34,6 +34,7 @@ $(document).ready(function(){
 			kaikkiTieto = result;
 			// tulosta funktio
 			tulosta(result);
+			console.log(result);
 		},
 		error: function(xhr){
 			console.log("Virhe!");
