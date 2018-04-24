@@ -34,7 +34,6 @@ $(document).ready(function(){
 			kaikkiTieto = result;
 			// tulosta funktio
 			tulosta(result);
-			console.log(result);
 		},
 		error: function(xhr){
 			console.log("Virhe!");
@@ -554,8 +553,6 @@ $(document).ready(function(){
 			}
 			else{ // jos mitään ei ole pielessä
 			
-// JSON TALLENNUS *******************************************************************
-	
 			// luodaan objekti
 			var tilausTiedot = {
 				nimi : eNimi + " " + sNimi,
@@ -580,6 +577,7 @@ $(document).ready(function(){
 				data: {"data" : tieto},
 				success: function(result){
 					console.log("Meni läpi");
+					console.log(tieto);
 				},
 				error: function(xhr){
 					console.log("Virhe!");
