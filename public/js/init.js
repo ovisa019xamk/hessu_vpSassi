@@ -567,6 +567,9 @@ $(document).ready(function(){
 			};
 			// pusketaan tilausTieto objektin JSONin tilaukset kohtaan
 			kaikkiTieto.tilaukset.push(tilausTiedot);
+			
+			// KONSOLITULOSTUS NÄYTTÖÄ VARTEN
+			console.log(kaikkiTieto);
 			// stringifoidaan
 			var tieto = JSON.stringify(kaikkiTieto);
 			// pistetään tiedot JSONiin
@@ -577,7 +580,6 @@ $(document).ready(function(){
 				data: {"data" : tieto},
 				success: function(result){
 					console.log("Meni läpi");
-					console.log(tieto);
 				},
 				error: function(xhr){
 					console.log("Virhe!");
