@@ -553,10 +553,10 @@ $(document).ready(function(){
 			}
 			else{ // jos mitään ei ole pielessä
 			
-	/* JSON TALLENNUS *******************************************************************
+// JSON TALLENNUS *******************************************************************
 	
 			// luodaan objekti
-			var tilausTiedot = [{
+			var tilausTiedot = {
 				nimi : eNimi + " " + sNimi,
 				puhelin : puh,
 				katuosoite : katu,
@@ -566,29 +566,24 @@ $(document).ready(function(){
 				keskiviikko : keNimi + ", " + keHinta + " €",
 				torstai : toNimi + ", " + toHinta + " €",
 				perjantai : peNimi + ", " + peHinta + " €"
-			}];
-			var testi = JSON.stringify(tilausTiedot);
-			console.log(kaikkiTieto);
-			console.log(testi);
-			// pusketaan tilausTieto objektin tiedot JSONiin
-			kaikkiTieto.push(testi);
+			};
+			// pusketaan tilausTieto objektin JSONin tilaukset kohtaan
+			kaikkiTieto.tilaukset.push(tilausTiedot);
 			// stringifoidaan
 			var tieto = JSON.stringify(kaikkiTieto);
 			// pistetään tiedot JSONiin
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8000/api/", // localhost testaus
-				//url: "/api/", // data json
+				//url: "http://localhost:8000/api/", // localhost testaus
+				url: "/api/", // data json
 				data: {"data" : tieto},
 				success: function(result){
 					console.log("Meni läpi");
-					//console.log(tieto);
 				},
 				error: function(xhr){
 					console.log("Virhe!");
 				}
 			});
-	*/
 			
 			// varille arvoksi lopetussivun table body
 			var tulostus = $("#tulostus");
