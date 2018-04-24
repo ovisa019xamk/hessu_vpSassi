@@ -27,8 +27,8 @@ $(document).ready(function(){
 	
 	$.ajax({
 		method: "GET", //haetaan
-		//url: "http://localhost:8000/api/", // localhost testaus
-		url: "/api/", // data json
+		url: "http://localhost:8000/api/", // localhost testaus
+		//url: "/api/", // data json
 		success: function(result){
 			// määritetään kaikkiTieto -Array tarkoittamaan JSONia
 			kaikkiTieto = result;
@@ -540,6 +540,33 @@ $(document).ready(function(){
 		var sNimi = $("#sNimi").val();
 		var puh = $("#puh").val();
 		var katu = $("#katu").val();
+		
+		
+		// päivämäärä vareille arvoksi oletuksena "--"
+		var maPaiv = "--";
+		var tiPaiv = "--";
+		var kePaiv = "--";
+		var toPaiv = "--";
+		var pePaiv = "--";
+		
+		// jos jonkin viikonpäivän kohdalle on valittu ateria
+		if(maValittu == true){
+			// muutetaan päivämäärä varille arvoksi viikonpäivän päivämäärä
+			maPaiv = $("#maPaiv").text();
+		}
+		if(tiValittu == true){
+			tiPaiv = $("#tiPaiv").text();
+		}
+		if(keValittu == true){
+			kePaiv = $("#kePaiv").text();
+		}
+		if(toValittu == true){
+			toPaiv = $("#toPaiv").text();
+		}
+		if(toValittu == true){
+			pePaiv = $("#pePaiv").text();
+		}
+
 			
 		var yhteisHinta = $("#yhteisHinta");
 		
@@ -568,15 +595,13 @@ $(document).ready(function(){
 			// pusketaan tilausTieto objektin JSONin tilaukset kohtaan
 			kaikkiTieto.tilaukset.push(tilausTiedot);
 			
-			// KONSOLITULOSTUS NÄYTTÖÄ VARTEN
-			console.log(kaikkiTieto);
 			// stringifoidaan
 			var tieto = JSON.stringify(kaikkiTieto);
 			// pistetään tiedot JSONiin
 			$.ajax({
 				type: "POST",
-				//url: "http://localhost:8000/api/", // localhost testaus
-				url: "/api/", // data json
+				url: "http://localhost:8000/api/", // localhost testaus
+				//url: "/api/", // data json
 				data: {"data" : tieto},
 				success: function(result){
 					console.log("Meni läpi");
@@ -608,6 +633,9 @@ $(document).ready(function(){
 			// tilauksen aterioiden tietojen tulostus
 			
 			// ma
+			// viikonpäivän päivämäärä
+			var paivMa = tulostus.children().eq(6).children().eq(1);
+			$(paivMa).html(maPaiv);
 			// aterian nimi
 			var nimiMa = tulostus.children().eq(6).children().eq(2);
 			$(nimiMa).html(maNimi);
@@ -616,21 +644,32 @@ $(document).ready(function(){
 			$(hintaMa).html(maHinta.toFixed(2) + " €");
 			
 			// ti
+			var paivTi = tulostus.children().eq(7).children().eq(1);
+			$(paivTi).html(tiPaiv);
 			var nimiTi = tulostus.children().eq(7).children().eq(2);
 			$(nimiTi).html(tiNimi);
 			var hintaTi = tulostus.children().eq(7).children().eq(3);
 			$(hintaTi).html(tiHinta.toFixed(2) + " €");
+			
 			// ke
+			var paivKe = tulostus.children().eq(8).children().eq(1);
+			$(paivKe).html(kePaiv);
 			var nimiKe = tulostus.children().eq(8).children().eq(2);
 			$(nimiKe).html(keNimi);
 			var hintaKe = tulostus.children().eq(8).children().eq(3);
 			$(hintaKe).html(keHinta.toFixed(2) + " €");
+			
 			// to
+			var paivTo = tulostus.children().eq(9).children().eq(1);
+			$(paivTo).html(toPaiv);
 			var nimiTo = tulostus.children().eq(9).children().eq(2);
 			$(nimiTo).html(toNimi);
 			var hintaTo = tulostus.children().eq(9).children().eq(3);
 			$(hintaTo).html(toHinta.toFixed(2) + " €");
+			
 			// pe
+			var paivPe = tulostus.children().eq(10).children().eq(1);
+			$(paivPe).html(pePaiv);
 			var nimiPe = tulostus.children().eq(10).children().eq(2);
 			$(nimiPe).html(peNimi);
 			var hintaPe = tulostus.children().eq(10).children().eq(3);
