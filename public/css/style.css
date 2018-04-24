@@ -71,6 +71,13 @@
 .footer-copyright{
 	text-align: center;
 }
+#footteri .container{
+	padding-bottom: 20px;
+}
+#rekisteriSeloste{
+	text-decoration: none;
+	color: #ff9933;
+}
 
 /*TAUSTA ASETUKSET*/
 #taustaKuva{
