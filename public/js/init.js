@@ -27,8 +27,8 @@ $(document).ready(function(){
 	
 	$.ajax({
 		method: "GET", //haetaan
-		url: "http://localhost:8000/api/", // localhost testaus
-		//url: "/api/", // data json
+		//url: "http://localhost:8000/api/", // localhost testaus
+		url: "/api/", // data json
 		success: function(result){
 			// määritetään kaikkiTieto -Array tarkoittamaan JSONia
 			kaikkiTieto = result;
@@ -600,8 +600,8 @@ $(document).ready(function(){
 			// pistetään tiedot JSONiin
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8000/api/", // localhost testaus
-				//url: "/api/", // data json
+				//url: "http://localhost:8000/api/", // localhost testaus
+				url: "/api/", // data json
 				data: {"data" : tieto},
 				success: function(result){
 					console.log("Meni läpi");
