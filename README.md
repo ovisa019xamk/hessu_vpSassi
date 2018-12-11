@@ -2,6 +2,8 @@
 
 Ohjelman tarkoitus on antaa vanhoille ihmisille mahdollisuus tilata valmiita aterioita kotiinkuljetuksena
 
+löytyy osoitteesta: https://ovisa019-hessun-ateriapalvelu.herokuapp.com/
+
 ## ohjelma rakentuu
 
 * **etusivusta**
